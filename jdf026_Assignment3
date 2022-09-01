@@ -1,0 +1,60 @@
+// ASSIGNMENT 3
+// 1. FUNCTION PRINTS THE NUMBERS 1 - 10 IN A TRIANGLE
+function numTriangle(){
+    last = 0
+    for (let row = 1; row <= 4; row++){
+        line = ""
+        for (nums = 1; nums <= row; nums++){
+            line += (nums + last)
+            if (nums == row){
+                last = parseInt(line.slice(-1))
+            }
+        }
+        console.log(line)
+    }
+}
+// numTriangle()
+
+// 2. FUNCTION TELLS WHETHER A GIVEN NUMBER IS AN ARMSTRONG NUMBER
+function armstrong(num){
+    let digitString = num.toString()
+    let cube, sum  = 0
+    for (let i = 0; i<digitString.length; i++){
+        let cube = Math.pow(parseInt(digitString[i]),3)
+        sum += cube
+    }
+    return num === sum
+}
+// console.log(armstrong(153))
+
+// 3. Function that tells if a number is a speacial number
+function isSpecial(num){
+    function factorial(num){
+        if (num == 0){
+            return 1
+        }
+        else{
+            return num*factorial(num-1)
+        }
+    }
+    function digitList(num){
+        let digitString = num.toString()
+        let list = []
+        for (let i = 0; i<digitString.length; i++){
+            list.push(parseInt(digitString[i]))
+        }
+        // console.log(list)
+        return list
+    }
+    function sumFactory(list){
+        let sum = 0
+        for (let i = 0;i < list.length; i++){
+            // console.log(list[i])
+            sum += factorial(list[i])
+        }
+        return sum
+    }
+    console.log(num, (sumFactory(digitList(num))))
+    return (num == sumFactory(digitList(num)))
+}
+// console.log(isSpecial(145))
