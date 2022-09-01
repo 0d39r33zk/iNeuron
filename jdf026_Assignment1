@@ -1,0 +1,31 @@
+// assignment 1
+// 1. takes a year and tells if it is a leap year
+function isLeap(year){
+    return !Boolean(year%4) ? "Is a leap year" : "Is not a leap year"
+}
+// console.log(isLeap(2001))
+// console.log(isLeap(2004))
+
+// 2a. coverts celcius to farhenheit
+function c2f(temp){
+    return (temp *9/5)+32
+}
+// console.log(c2f(60))
+
+// 2b. converts farhenheit to celcius
+function f2c(temp){
+    return (temp - 32)*5/9
+}
+// console.log(f2c(45))
+
+
+// 3. returns the factorial of a number
+function factorial(num){
+    if (num == 0){
+        return 1
+    }
+    else{
+        return num*factorial(num-1)
+    }
+}
+console.log(factorial(20))
