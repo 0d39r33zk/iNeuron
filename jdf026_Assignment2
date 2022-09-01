@@ -1,0 +1,95 @@
+// assignment 2
+//1. takes a list of side lengths and returns triangle type
+function triangleType(sides){
+    sides = new Set(sides)
+
+    switch(sides.size){
+        case 1:
+            return "equalateral triangle"
+        case 2:
+            return "isosceles triangle"
+        case 3:
+            return "scalene triangle"
+    }
+    return "this is not a triangle"
+}
+// console.log(triangleType([3,5,7]))
+// console.log(triangleType([3,3,3]))
+// console.log(triangleType([3,7,7]))
+
+//2.  takes a score and returns a letter grade
+function letterGrade(score){
+    switch(true){
+        case score >= 90 && score <= 100:
+            return "S grade"
+        case score >= 80 && score < 90:
+            return "A grade"
+        case score >= 70 && score < 80:
+            return "B grade"
+        case score >= 60 && score < 70:
+            return "C grade"
+        case score >= 50 && score < 60:
+            return "D grade"
+        case score >= 40 && score < 50:
+            return "E grade"
+        case score < 40 && score >= 0:
+            return "Student has failed"
+        case (true):
+            return "invalid score"
+    }
+}
+
+// console.log(letterGrade(95))
+// console.log(letterGrade(85))
+// console.log(letterGrade(75))
+// console.log(letterGrade(65))
+// console.log(letterGrade(55))
+// console.log(letterGrade(45))
+// console.log(letterGrade(35))
+// console.log(letterGrade(-55))
+// console.log(letterGrade(200))
+
+
+// 3. returns the sum of all the multiples between 0 and 1000
+function multipleSums(){
+    mults = new Set()
+    let sum = 0
+    for (let i = 0; i < 1000; i++){
+        for (let j = 0; j < 1000; j++){
+            if (!(1000%i) && !(1000%j)){
+                mults.add(i,j)
+            }
+        }
+    }
+    mults.forEach(num => sum += num)
+    return sum
+}
+// console.log(multipleSums())
+
+// 4. function that returns a list of the factorial for each of the primes in a given range
+
+function primeFactorials(first,last){
+    function isPrime(number){
+        for (let i = 2; i < number; i++) {
+            if(number % i === 0) return false;
+        }
+        return number > 1;
+    }
+    function factorial(num){
+        if (num == 0){
+            return 1
+        }
+    else{
+        return num*factorial(num-1)
+        }
+    }
+
+    let list = []
+
+    for (let i = first; i<=last; i++){
+        if (isPrime(i)) list.push(factorial(i))
+    }
+
+    return list
+}
+// console.log(primeFactorials(1,100))
