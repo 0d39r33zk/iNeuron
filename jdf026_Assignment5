@@ -1,0 +1,40 @@
+class Cylinder {
+    constructor(height, radius) {
+        this.height = height;
+        this.radius = radius;
+    }
+
+    getVolume() {
+        return Math.PI * Math.pow(this.radius,2) * this.height;
+    }
+}
+
+class Sphere {
+    constructor(radius) {
+        this.radius = radius;
+    }
+
+getVolume() {
+    return (4/3) * Math.PI * Math.pow(this.radius,3);
+    }
+}
+
+class Cone {
+    constructor(height, radius) {
+        this.height = height;
+        this.radius = radius;
+    }
+
+    getVolume() {
+        return (Math.PI/3) * Math.pow(this.radius,2) * this.height;
+    }
+}
+
+// cyl = new Cylinder(4,2)
+// console.log(cyl.getVolume())
+
+// ball = new Sphere(2)
+// console.log(ball.getVolume())
+
+// cone = new Cone(4,2)
+// console.log(cone.getVolume())
